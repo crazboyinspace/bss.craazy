@@ -1,3 +1,4 @@
+function main(){
     //IndexedDB code from Willard
     async function createDatabase() {
    
