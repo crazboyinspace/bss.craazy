@@ -1718,13 +1718,14 @@ function BeeSwarmSimulator(DATA){
 
                 if(items.ticket.amount<0) return "You need 6 tickets to buy a Royal Jelly!"
 
-            },minX:-29.5,maxX:-21.5,minY:0.5,maxY:3.5,minZ:7.75,maxZ:11.75,message:'Use Royal Jelly Dispenser (0 Tickets)',func:function(player){
+            },minX:-29.5,maxX:-21.5,minY:0.5,maxY:3.5,minZ:7.75,maxZ:11.75,message:'Use Royal Jelly Dispenser (1 Tickets)',func:function(player){
 
                 items.royalJelly.amount++
-                items.ticket.amount-=0
+                items.ticket.amount-=1
                 player.addEffect('haste',false,false,undefined,10)
                 player.updateInventory()
-                player.addMessage('Congrats you got scammed! JK 0 Tickets taken due to Landons awesome code')
+                player.addMessage('Congrats you got scammed!')
+                player.addMessage('JK Crazyboys code saved you')
                 player.addMessage('Activated x10 "Haste"')
             }
         },
@@ -21917,7 +21918,7 @@ function BeeSwarmSimulator(DATA){
                 ParticleRenderer.add({x:player.body.position.x+x,y:player.body.position.y+y,z:player.body.position.z+z,vx:-player.bodyDir[2]*2,vy:1.75,vz:player.bodyDir[0]*2,grav:0,size:MATH.random(70,120),col:[1,0,Math.random()],life:1,rotVel:MATH.random(-3,3),alpha:4.5})
             },
             desc:'Swipe through flames to unlock their dark potential. Ensue dark chaos in fields and refuel burning flames, collecting more pollen and dealing more damage. Tend a destructive field of violet fire to enhance your Super-Crit power and Instant Red Conversion.',
-            cost:['2500000000 honey','1000 redExtract','200 stinger','50 hardWax','15 superSmoothie']
+            cost:['250000000 honey','1000 redExtract','200 stinger','50 hardWax','15 superSmoothie']
         },
        
         tidePopper:{
@@ -28225,7 +28226,7 @@ function BeeSwarmSimulator(DATA){
                 name:'royalJelly',
                 slot:'item',
                 viewMatrix:[32+4.5,12,50.25-4.5,-MATH.HALF_PI-MATH.QUATER_PI,0.02],
-                cost:[(n,i=1)=>Math.floor(Math.min(n*2500+25000,1000000)*i)+' honey'],
+                cost:[(n,i=1)=>Math.floor(Math.min(n*250+2500,100000)*i)+' honey'],
                 desc:'Can be fed to a bee to transform it into a different type!'
             }],
             currentIndex:0,message:'Explore Royal Jelly Shop',currentIncrement:0,increments:[1,10,10e1,10e2,10e3,10e4]
